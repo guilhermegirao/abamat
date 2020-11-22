@@ -35,13 +35,15 @@ const Tutorial = () => {
   };
 
   return (
-    <div className="row center">
-      <div className="col-sm-12">
-        <div className="animate__animated animate__fadeIn game-container">
-          <h1 className="indicator">TUTORIAL 1</h1>
-          <h3 className="question-container">
-            <Text parse>TEXTE</Text>
-          </h3>
+    <div className="container">
+      <div className="row center">
+        <div className="col-sm-12">
+          <div className="animate__animated animate__fadeIn game-container">
+            <h1 className="indicator">TUTORIAL 1</h1>
+            <h3 className="question-container">
+              <Text parse>TEXTE</Text>
+            </h3>
+          </div>
         </div>
       </div>
     </div>

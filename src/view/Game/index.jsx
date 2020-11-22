@@ -77,104 +77,106 @@ const Game = () => {
   };
 
   return (
-    <div className="row center">
-      <div className="col-sm-12">
-        <div className="animate__animated animate__fadeIn game-container">
-          <h1 className="indicator">
-            Fase {stage.id}
-            {success && ' concluída!'}
-          </h1>
-          <h3 className="question-container">
-            <Text parse>{stage.text}</Text>
-            {success && (
-              <Text parse animated>
-                {`RESPOSTA: ${stage.answer}`}
-              </Text>
-            )}
-          </h3>
-          {(!success && (
-            <div className="center">
-              <form action="./" onSubmit={handleSubmit}>
-                {stage.eggs && (
-                  <EggBox
-                    min={stage.eggs_min}
-                    max={stage.eggs_max}
-                    amount={value}
-                  />
-                )}
-
-                {stage.image && (
-                  <img
-                    src={imagesQuestions[`${stage.id}.png`]}
-                    alt="Imagem da Questão"
-                    className="question-image"
-                  />
-                )}
-
-                {stage.expression && (
-                  <h3 className="question-expression">
-                    <Text animated parse>
-                      {stage.expression}
-                    </Text>
-                  </h3>
-                )}
-
-                <div>
-                  <Input
-                    type="number"
-                    min={0}
-                    onChange={handleChange}
-                    placeholder={texts.x_value}
-                    required
-                  />
-                </div>
-                <Button type="submit">RESPONDER</Button>
-              </form>
-            </div>
-          )) || (
-            <div>
+    <div className="container">
+      <div className="row center">
+        <div className="col-sm-12">
+          <div className="animate__animated animate__fadeIn game-container">
+            <h1 className="indicator">
+              Fase {stage.id}
+              {success && ' concluída!'}
+            </h1>
+            <h3 className="question-container">
+              <Text parse>{stage.text}</Text>
+              {success && (
+                <Text parse animated>
+                  {`RESPOSTA: ${stage.answer}`}
+                </Text>
+              )}
+            </h3>
+            {(!success && (
               <div className="center">
-                <div className="success-game-container">
+                <form action="./" onSubmit={handleSubmit}>
                   {stage.eggs && (
                     <EggBox
                       min={stage.eggs_min}
                       max={stage.eggs_max}
-                      amount={stage.eggs_min}
-                      animated
+                      amount={value}
                     />
                   )}
-                  <Button onClick={handleNext}>PRÓXIMA FASE</Button>
+
+                  {stage.image && (
+                    <img
+                      src={imagesQuestions[`${stage.id}.png`]}
+                      alt="Imagem da Questão"
+                      className="question-image"
+                    />
+                  )}
+
+                  {stage.expression && (
+                    <h3 className="question-expression">
+                      <Text animated parse>
+                        {stage.expression}
+                      </Text>
+                    </h3>
+                  )}
+
+                  <div>
+                    <Input
+                      type="number"
+                      min={0}
+                      onChange={handleChange}
+                      placeholder={texts.x_value}
+                      required
+                    />
+                  </div>
+                  <Button type="submit">RESPONDER</Button>
+                </form>
+              </div>
+            )) || (
+              <div>
+                <div className="center">
+                  <div className="success-game-container">
+                    {stage.eggs && (
+                      <EggBox
+                        min={stage.eggs_min}
+                        max={stage.eggs_max}
+                        amount={stage.eggs_min}
+                        animated
+                      />
+                    )}
+                    <Button onClick={handleNext}>PRÓXIMA FASE</Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
 
-        <AvatarContainer>
-          {tipText && (
-            <div
-              className={
-                !success
-                  ? `animate__animated animate__bounceInLeft`
-                  : `animate__animated animate__bounceOutLeft`
-              }
-            >
-              <Balloon direction="right">
-                <Text parse>{`DICA: ${tipText}`}</Text>
-              </Balloon>
-              <Avatar type="idle" number={avatarNumber} />
-            </div>
-          )}
-          {success && (
-            <div className="animate__animated animate__bounceInLeft animate__delay-0.5s">
-              <div className="avatar-success-container">
-                <Sparkles>
-                  <Avatar type="success" number={random(1, 21)} />
-                </Sparkles>
+          <AvatarContainer>
+            {tipText && (
+              <div
+                className={
+                  !success
+                    ? `animate__animated animate__bounceInLeft`
+                    : `animate__animated animate__bounceOutLeft`
+                }
+              >
+                <Balloon direction="right">
+                  <Text parse>{`DICA: ${tipText}`}</Text>
+                </Balloon>
+                <Avatar type="idle" number={avatarNumber} />
               </div>
-            </div>
-          )}
-        </AvatarContainer>
+            )}
+            {success && (
+              <div className="animate__animated animate__bounceInLeft animate__delay-0.5s">
+                <div className="avatar-success-container">
+                  <Sparkles>
+                    <Avatar type="success" number={random(1, 21)} />
+                  </Sparkles>
+                </div>
+              </div>
+            )}
+          </AvatarContainer>
+        </div>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const Finish = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <div className="row center">
         <div className="col-sm-12">
           <div className="animate__animated animate__fadeIn game-container">
@@ -43,7 +43,7 @@ const Finish = () => {
           </div>
         </div>
       </AvatarContainer>
-    </>
+    </div>
   );
 };
 
