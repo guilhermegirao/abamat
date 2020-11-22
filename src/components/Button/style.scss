@@ -1,0 +1,26 @@
+.btn {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: url('../../../public/images/button/button.png') no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0px 25px 20px;
+  width: 45%;
+  height: 100px;
+}
+
+.btn:active {
+  background: url('../../../public/images/button/button-press.png') no-repeat;
+  background-size: 100% 100%;
+  padding-top: 20px;
+  text-shadow: 1px 1px 1px black;
+}

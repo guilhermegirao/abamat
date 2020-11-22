@@ -1,0 +1,211 @@
+[
+  {
+    "id": 1,
+    "text": "Imagine que você é o dono (a) de uma padaria e você tem 2 ovos no seu estoque. Para completar a sua produção, você precisaria de 12 ovos. Ou seja, você precisa completar os espaços vazios da caixa de ovos. <br><br><b>PERGUNTA: Quantos ovos você precisa comprar?</br>",
+    "response": 10,
+    "answer": "Quantidade de ovos que preciso comprar:<br> 2 + x = 12, logo x = 12 - 2, então x = 10!",
+    "tips": [
+      "Conte os espaços vazios da caixa de ovos. Eles representam o valor que você precisa comprar.",
+      "Você está quase lá. Basta contar a quantidade de ovos que falta para completar a caixa. Perceba que a quantidade de ovos que falta é 10."
+    ],
+    "repeat_next": true,
+    "eggs": true,
+    "eggs_min": 2,
+    "egg_max": 12,
+    "image": false,
+    "expression": null
+  },
+  {
+    "id": 2,
+    "text": "PERGUNTA: Quantos ovos tem na caixa fechada?<br>",
+    "response": 20,
+    "answer": "Quantidade de ovos da caixa fechada: <br>12 + 8 = x, logo, x = 20!",
+    "tips": [
+      "Encontre o valor de x. <br>Entenda que a soma dos ovos da primeira caixa com os ovos da segunda caixa é o valor de x que queremos encontrar.<br>Neste caso 12 + 8 = X (número que quero encontrar)",
+      "Encontre o valor de x. O valor de x é a soma de 12+8. <br><br>Neste caso 12+8=X <br>Logo, x=20."
+    ],
+    "repeat_next": true,
+    "eggs": false,
+    "image": true,
+    "expression": null
+  },
+  {
+    "id": 3,
+    "text": "PERGUNTA: Qual o valor de X?<br>",
+    "response": 24,
+    "answer": "A soma dos ovos representa o valor de x que queremos encontrar: <br>12 + 12 = x, logo, x = 24!",
+    "tips": [
+      "Encontre o valor de x. <br>Entenda que a soma dos ovos da primeira caixa com os ovos da segunda caixa é o valor de x que queremos encontrar.<br>Neste caso 12 + 12 = X (número que quero encontrar)",
+      "Encontre o valor de x. <br>Entenda que a soma total da quantidade de ovos é o valor de x que queremos encontrar.<br>12+12=X.<br>Neste caso: X = 24.",
+      "Faça o cálculo:<br>12 + 12=x<br>Logo, x=24."
+    ],
+    "repeat_next": true,
+    "eggs": false,
+    "image": true,
+    "expression": null
+  },
+  {
+    "id": 4,
+    "text": "PERGUNTA: Qual o valor de X?<br>",
+    "response": 30,
+    "answer": "A soma dos ovos representa o valor de x que queremos encontrar: <br>20 + 10 = x, logo, x = 30!",
+    "tips": [
+      "Encontre o valor de x. <br>Lembre-se de contar os ovos nas duas caixas...<br>Entenda que a soma total da quantidade de ovos é o valor de x que queremos encontrar.",
+      "Lembre-se de contar os ovos nas duas caixas...<br>Entenda que a soma total da quantidade de ovos é o valor de x que queremos encontrar.<br>Faça a conta: 20 + 10 = x",
+      "Faça o cálculo:<br>20 + 10=x<br>Logo, x=30."
+    ],
+    "repeat_next": false,
+    "eggs": false,
+    "image": true,
+    "expression": null
+  },
+  {
+    "id": 5,
+    "text": "PERGUNTA: Qual o valor de X?<br>",
+    "response": 15,
+    "answer": "A soma dos números representa o valor de x que queremos encontrar: <br>10 + 5 = x, logo, x = 15!",
+    "tips": [
+      "Use os conceitos anteriores que você aprendeu para encontrar o valor de x. <br>Você consegue!",
+      "O X é o valor da soma.",
+      "Faça a conta: 10+5 para encontrar o valor de x."
+    ],
+    "repeat_next": false,
+    "eggs": false,
+    "image": false,
+    "expression": "10 + 5 = X"
+  },
+  {
+    "id": 6,
+    "text": "PERGUNTA: Qual o valor de X?<br>",
+    "response": 16,
+    "answer": "A soma dos números representa o valor de x que queremos encontrar: <br>12 + 4 = x, logo, x = 16!",
+    "tips": [
+      "Use os conceitos anteriores que você aprendeu para encontrar o valor de x. <br>Você consegue!",
+      "O X é o valor da soma.",
+      "Faça a conta: 12+4 para encontrar o valor de x."
+    ],
+    "repeat_next": false,
+    "eggs": false,
+    "image": false,
+    "expression": "12 + 4 = X"
+  },
+  {
+    "id": 7,
+    "text": "PERGUNTA: Se X é a quantidade de ovos na caixa fechada, qual é o valor de X?<br>",
+    "response": 4,
+    "answer": "Para encontrar o valor de x que procuramos, basta passar o 12 para o outro lado subtraindo. Logo: <br>12 + x = 16 <br>x = 16 - 12<br>x = 4.",
+    "tips": [
+      "Encontre o valor de x. <br>Sabemos que o total de ovos é 16. Uma parte dos ovos está na caixa aberta (12 ovos). <br>Temos que descobrir quantos ovos tem na caixa fechada. <br>Neste caso, x = 16-12.",
+      "Faça a conta: 16-12 para encontrar o valor de x."
+    ],
+    "repeat_next": true,
+    "eggs": false,
+    "image": true,
+    "expression": null
+  },
+  {
+    "id": 8,
+    "text": "PERGUNTA: Se X é a quantidade de ovos na caixa fechada, qual é o valor de X?<br>",
+    "response": 12,
+    "answer": "Para encontrar o valor de x que procuramos, basta passar o 12 para o outro lado subtraindo. Logo: <br>12 + x = 24 <br>x = 24 - 12<br>x = 12.",
+    "tips": [
+      "Encontre o valor de x. <br>Sabemos que o total de ovos é 24. Uma parte dos ovos está na caixa aberta (12 ovos). <br>Temos que descobrir quantos ovos tem na caixa fechada.",
+      "Encontre o valor de x. <br>Sabemos que o total de ovos é 24. Uma parte dos ovos está na caixa aberta (12 ovos). <br>Temos que descobrir quantos ovos tem na caixa fechada. <br>Logo, x = 24-12.",
+      "Faça a conta: 24-12 para encontrar o valor de x."
+    ],
+    "repeat_next": false,
+    "eggs": false,
+    "image": true,
+    "expression": null
+  },
+  {
+    "id": 9,
+    "text": "PERGUNTA: Qual é o valor de X?<br>",
+    "response": 21,
+    "answer": "Para descobrir o valor de x, passamos o 7 para o outro lado subtraindo: <br>7 + x = 28, x = 28 - 7, logo, x = 21!",
+    "tips": [
+      "Use os conceitos anteriores que você aprendeu para encontrar o valor de x. <br>Você consegue!",
+      "O X é o valor da subtração dos números.",
+      "Faça a conta: 28-7 para encontrar o valor de x."
+    ],
+    "repeat_next": false,
+    "eggs": false,
+    "image": false,
+    "expression": "7 + X = 28"
+  },
+  {
+    "id": 10,
+    "text": "PERGUNTA: Qual é o valor de X?<br>",
+    "response": 22,
+    "answer": "Para descobrir o valor de x, passamos o 8 para o outro lado subtraindo: <br>X + 8 = 30, x = 30 - 8, logo, x = 22!",
+    "tips": [
+      "",
+      "O X é o valor da subtração dos números.",
+      "Faça o cálculo: 30-8=x."
+    ],
+    "repeat_next": false,
+    "eggs": false,
+    "image": false,
+    "expression": "X + 8 = 30"
+  },
+  {
+    "id": 11,
+    "text": "PERGUNTA: Temos 2 caixas fechadas, com a mesma quantidade de ovos (X.)<br>Qual o valor de X?<br>",
+    "response": 3,
+    "answer": "Matematicamente: <br>3 + 2x = 9<br> Logo: 2x = 9 - 3<br>2x = 6<br>x = 6/2<br>x = 3.",
+    "tips": [
+      "Encontre o valor de x.<br>Sabemos que o total de ovos é 9, vamos fazer a mesma operação que estamos habituados:<br>2x = 9-3, logo: 2x=6<br>Reparem que não posso passar o 2 subtraindo, pois ele está junto com o x.<br>Neste caso, passo o 2 dividindo: <br>x=6/2.<br>Agora faça a conta e descubra o valor de x.",
+      "Encontre o valor de x.<br>Veja as caixas de ovos abertas...<br>Se em cada caixa tem 3 ovos... o valor de x = 3.",
+      "Faça a conta: 3+2x=9<br>2x=9-3<br>2x=6<br>x=6/2=???"
+    ],
+    "repeat_next": true,
+    "eggs": false,
+    "image": true,
+    "expression": null
+  },
+  {
+    "id": 12,
+    "text": "PERGUNTA: Temos 2 caixas fechadas, com a mesma quantidade de ovos (X.)<br>Qual o valor de X?<br>",
+    "response": 5,
+    "answer": "Matematicamente: <br>3 + 2x = 13<br> Logo: 2x = 13 - 3<br>2x = 10<br>x = 10/2<br>x = 5.",
+    "tips": [
+      "Encontre o valor de x.<br>Sabemos que o total de ovos é 13, vamos fazer a mesma operação que estamos habituados:<br>2x = 13-3, logo: 2x=10<br>Reparem que não posso passar o 2 subtraindo, pois ele está junto com o x.<br>Neste caso, passo o 2 dividindo: <br>x=10/2.<br>Agora faça a conta e descubra o valor de x.",
+      "Encontre o valor de x.<br>Faça a conta: 3+2x=13<br>2x=13-3<br>2x=10<br>x=10/2=???",
+      "Faça o cálculo a seguir para descobrir o valor de x<br>x=10/2=???"
+    ],
+    "repeat_next": false,
+    "eggs": false,
+    "image": true,
+    "expression": null
+  },
+  {
+    "id": 13,
+    "text": "PERGUNTA: Qual o valor de X?<br>",
+    "response": 7,
+    "answer": "Matematicamente: <br>3x + 3 = 24<br>3x = 24 - 3<br>3x = 21<br>x=21/3<br>x = 7.",
+    "tips": [
+      "Use os conceitos anteriores para o valor de x",
+      "Lembre-se:<br>3x+3=24<br>3x=24-3<br>3x=21<br>x=21/<br>x=???",
+      "Faça o cálculo: x=21/3 para encontrar x."
+    ],
+    "repeat_next": true,
+    "eggs": false,
+    "image": false,
+    "expression": "3x + 3 = 24"
+  },
+  {
+    "id": 14,
+    "text": "PERGUNTA: Qual o valor de X?<br>",
+    "response": 8,
+    "answer": "Matematicamente: <br>10 + 2x = 26 <br>2x = 26-10<br>2x = 16<br>x = 16/2<br>x = 8.",
+    "tips": [
+      "Use os conceitos anteriores para o valor de x",
+      "Lembre-se:<br>10+2x=26<br>2x=26-10<br>2x=16<br>x=16/2<br>x=???",
+      "Faça o cálculo: x=16/2 para encontrar x."
+    ],
+    "repeat_next": true,
+    "eggs": false,
+    "image": false,
+    "expression": "10 + 2x = 26"
+  }
+]
