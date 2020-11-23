@@ -93,7 +93,7 @@
     "id": 7,
     "text": "PERGUNTA: Se X é a quantidade de ovos na caixa fechada, qual é o valor de X?<br>",
     "response": 4,
-    "answer": "Para encontrar o valor de x que procuramos, basta passar o 12 para o outro lado subtraindo. Logo: <br>12 + x = 16 <br>x = 16 - 12<br>x = 4.",
+    "answer": "Para encontrar o valor de x que procuramos, basta passar o 12 para o outro lado subtraindo. Logo: <br>12 + x = 16 <br>x = 16 - 12<br>x = 4",
     "tips": [
       "Encontre o valor de x. <br>Sabemos que o total de ovos é 16. Uma parte dos ovos está na caixa aberta (12 ovos). <br>Temos que descobrir quantos ovos tem na caixa fechada. <br>Neste caso, x = 16-12.",
       "Faça a conta: 16-12 para encontrar o valor de x."
@@ -107,7 +107,7 @@
     "id": 8,
     "text": "PERGUNTA: Se X é a quantidade de ovos na caixa fechada, qual é o valor de X?<br>",
     "response": 12,
-    "answer": "Para encontrar o valor de x que procuramos, basta passar o 12 para o outro lado subtraindo. Logo: <br>12 + x = 24 <br>x = 24 - 12<br>x = 12.",
+    "answer": "Para encontrar o valor de x que procuramos, basta passar o 12 para o outro lado subtraindo. Logo: <br>12 + x = 24 <br>x = 24 - 12<br>x = 12",
     "tips": [
       "Encontre o valor de x. <br>Sabemos que o total de ovos é 24. Uma parte dos ovos está na caixa aberta (12 ovos). <br>Temos que descobrir quantos ovos tem na caixa fechada.",
       "Encontre o valor de x. <br>Sabemos que o total de ovos é 24. Uma parte dos ovos está na caixa aberta (12 ovos). <br>Temos que descobrir quantos ovos tem na caixa fechada. <br>Logo, x = 24-12.",
@@ -152,7 +152,7 @@
     "id": 11,
     "text": "PERGUNTA: Temos 2 caixas fechadas, com a mesma quantidade de ovos (X.)<br>Qual o valor de X?<br>",
     "response": 3,
-    "answer": "Matematicamente: <br>3 + 2x = 9<br> Logo: 2x = 9 - 3<br>2x = 6<br>x = 6/2<br>x = 3.",
+    "answer": "Matematicamente: <br>3 + 2x = 9<br> Logo: 2x = 9 - 3<br>2x = 6<br>x = 6/2<br>x = 3",
     "tips": [
       "Faça a conta: 3+2x=9<br>2x=9-3<br>2x=6<br>x=6/2<br>x=???",
       "Faça a conta: <br>x=6/2<br>x=???"
