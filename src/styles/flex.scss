@@ -1,7 +1,5 @@
 .container-fluid,
 .container {
-  margin-right: auto;
-  margin-left: 455px;
 }
 
 .container-fluid {
@@ -37,6 +35,10 @@
   -webkit-box-direction: reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
+}
+
+.col-sm-12 {
+  display: flex;
 }
 
 .col-xs,

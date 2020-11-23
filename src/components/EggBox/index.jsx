@@ -28,7 +28,7 @@ const EggBox = props => {
   useEffect(() => {
     if (spriteState !== null) {
       let start = min + amount;
-      if (start > max) start = max + 1;
+      if (start > max) start = min;
 
       spriteState.setStartAt(start);
       spriteState.goToAndPause(start);

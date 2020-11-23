@@ -84,7 +84,7 @@ const StartScreen = () => {
           )}
         </div>
         <AvatarContainer>
-          <div className="animate__animated animate__bounceInLeft animate__delay-1s">
+          <div className="animate__animated animate__bounceInRight animate__delay-1s">
             <Balloon direction="right">
               <Text parse>{balloonText}</Text>
             </Balloon>

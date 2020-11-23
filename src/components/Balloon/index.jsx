@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 const Balloon = ({ children, ...props }) => {
-  const { direction } = props;
+  const { direction, blink } = props;
 
   return (
-    <div className={`balloon ${direction}`}>
+    <div className={`balloon ${direction} ${blink ? 'blink' : ''}`}>
       <span>{children}</span>
     </div>
   );
@@ -15,10 +15,12 @@ const Balloon = ({ children, ...props }) => {
 
 Balloon.propTypes = {
   direction: PropTypes.string,
+  blink: PropTypes.bool,
 };
 
 Balloon.defaultProps = {
   direction: 'right',
+  blink: false,
 };
 
 export default Balloon;

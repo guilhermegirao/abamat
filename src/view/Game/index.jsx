@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Sparkles from '@chad.b.morrow/sparkles';
 import useStorageState from '../../hooks/useStorageState.js';
 
@@ -17,6 +17,7 @@ import texts from '../../data/texts.json';
 import stages from '../../data/stages.json';
 
 const firstRandom = random(1, 6);
+
 let blockNextQueue = false;
 
 const imagesQuestions = importAll(
@@ -26,20 +27,31 @@ const imagesQuestions = importAll(
 const Game = () => {
   const [, setView] = useStorageState('game', 'view');
 
-  const [number, setNumber] = useStorageState('0', 'stage');
+  const [number, setNumber] = useStorageState(0, 'stage');
   const [queue, setQueue] = useStorageState('[]', 'queue');
   const [tip, setTip] = useState(0);
   const [avatarNumber, setAvatarNumber] = useState(firstRandom);
   const [success, setSuccess] = useState(false);
 
+  const [blink, setBlink] = useState(false);
+
   const queuePos = queue[number];
   const stage = stages[queuePos];
   const tipText = stage?.tips ? stage.tips[tip] : false;
+
+  const textInput = useRef(null);
 
   const [value, setValue] = useState(stage?.eggs_min || 0);
 
   const handleChange = e => {
     setValue(Number(e.target.value));
+  };
+
+  const blinkBalloon = () => {
+    setBlink(true);
+    setTimeout(() => {
+      setBlink(false);
+    }, 1000);
   };
 
   const handleSubmit = e => {
@@ -64,6 +76,13 @@ const Game = () => {
         blockNextQueue = true;
       }
     }
+
+    const input = textInput.current.ref.current;
+
+    input.value = '';
+    input.focus();
+    setValue(0);
+    blinkBalloon();
   };
 
   const handleNext = () => {
@@ -72,7 +91,6 @@ const Game = () => {
     } else {
       setNumber(prevState => Number(prevState + 1));
     }
-
     window.location.reload();
   };
 
@@ -80,14 +98,20 @@ const Game = () => {
     <div className="container">
       <div className="row center">
         <div className="col-sm-12">
-          <div className="animate__animated animate__fadeIn game-container">
+          <div
+            className={`animate__animated game-container ${
+              !success
+                ? 'animate__fadeIn'
+                : 'animate__bounceInUp animate__delay-1s'
+            }`}
+          >
             <h1 className="indicator">
-              Fase {stage.id}
-              {success && ' concluída!'}
+              {(!success && <Text>{`Fase ${stage.id}`}</Text>) || (
+                <Text animated>{`Fase ${stage.id} concluída!`}</Text>
+              )}
             </h1>
             <h3 className="question-container">
-              <Text parse>{stage.text}</Text>
-              {success && (
+              {(!success && <Text parse>{stage.text}</Text>) || (
                 <Text parse animated>
                   {`RESPOSTA: ${stage.answer}`}
                 </Text>
@@ -122,10 +146,12 @@ const Game = () => {
 
                   <div>
                     <Input
+                      ref={textInput}
                       type="number"
                       min={0}
                       onChange={handleChange}
                       placeholder={texts.x_value}
+                      autoFocus
                       required
                     />
                   </div>
@@ -136,14 +162,6 @@ const Game = () => {
               <div>
                 <div className="center">
                   <div className="success-game-container">
-                    {stage.eggs && (
-                      <EggBox
-                        min={stage.eggs_min}
-                        max={stage.eggs_max}
-                        amount={stage.eggs_min}
-                        animated
-                      />
-                    )}
                     <Button onClick={handleNext}>PRÓXIMA FASE</Button>
                   </div>
                 </div>
@@ -152,25 +170,19 @@ const Game = () => {
           </div>
 
           <AvatarContainer>
-            {tipText && (
-              <div
-                className={
-                  !success
-                    ? `animate__animated animate__bounceInLeft`
-                    : `animate__animated animate__bounceOutLeft`
-                }
-              >
-                <Balloon direction="right">
+            {tipText && !success && (
+              <div className="animate__animated animate__bounceInRight animate__delay-3s">
+                <Balloon direction="right" blink={blink}>
                   <Text parse>{`DICA: ${tipText}`}</Text>
                 </Balloon>
                 <Avatar type="idle" number={avatarNumber} />
               </div>
             )}
             {success && (
-              <div className="animate__animated animate__bounceInLeft animate__delay-0.5s">
+              <div className="animate__animated animate__bounceInRight">
                 <div className="avatar-success-container">
-                  <Sparkles>
-                    <Avatar type="success" number={random(1, 21)} />
+                  <Sparkles maxSize={100} rate={300}>
+                    <Avatar type="success" number={stage.id} />
                   </Sparkles>
                 </div>
               </div>

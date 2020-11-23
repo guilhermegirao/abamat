@@ -1,7 +1,11 @@
 .avatar-container {
+  width: 410px;
+  position: relative;
+  margin-left: 40px;
+}
+
+.avatar-container > div {
   position: absolute;
-  z-index: 100;
   bottom: 0;
-  left: 10px;
-  width: 350px;
+  right: 0;
 }
