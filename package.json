@@ -16,7 +16,8 @@
     "react-simple-animate": "^3.3.10",
     "react-typist": "^2.0.5",
     "require-context": "^1.1.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "use-sound": "^2.0.0"
   },
   "scripts": {
     "start": "node ./server/server.js",

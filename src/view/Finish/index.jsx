@@ -46,10 +46,12 @@ const Finish = () => {
 };
 
 const FinishScreen = () => {
+  
   const handleClick = () => {
     storageClear();
     window.location.reload();
   };
+  
   return (
     <div className="container">
       <div className="row center">

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Sparkles from '@chad.b.morrow/sparkles';
+import useSound from 'use-sound';
 import useStorageState from '../../hooks/useStorageState.js';
 
 import AvatarContainer from '../../components/AvatarContainer/index.jsx';
@@ -24,6 +25,10 @@ const imagesQuestions = importAll(
   require.context('../../../public/images/questions', false, /\.(png)$/),
 );
 
+const sounds = importAll(
+  require.context('../../../public/sounds', false, /\.(mp3)$/),
+);
+
 const Game = () => {
   const [, setView] = useStorageState('game', 'view');
 
@@ -43,6 +48,9 @@ const Game = () => {
 
   const [value, setValue] = useState(stage?.eggs_min || 0);
 
+  const [playBip] = useSound(sounds['bip.mp3'], { volume: 0.5 });
+  const [playSuccess] = useSound(sounds[`${stage.id}.mp3`], { volume: 1.0 });
+
   const handleChange = e => {
     setValue(Number(e.target.value));
   };
@@ -61,28 +69,35 @@ const Game = () => {
 
     if (value === response) {
       setSuccess(true);
-    } else if (tip < stage.tips.length - 1) {
-      setTip(prevState => prevState + 1);
-      setAvatarNumber(random(1, 6));
+      setTimeout(() => {
+        playSuccess();
+      }, 700);
+    } else {
+      const input = textInput.current.ref.current;
 
-      if (!blockNextQueue) {
-        const newQueue = queue;
-        const index = stage.repeat_next
-          ? number + 1
-          : random(number, queue.length);
-        newQueue.splice(index, 0, stage.id - 1);
-        setQueue(newQueue.toString().split(','));
+      input.value = '';
+      input.focus();
+      setValue(0);
+      blinkBalloon();
 
-        blockNextQueue = true;
+      playBip();
+
+      if (tip < stage.tips.length - 1) {
+        setTip(prevState => prevState + 1);
+        setAvatarNumber(random(1, 6));
+
+        if (!blockNextQueue) {
+          const newQueue = queue;
+          const index = stage.repeat_next
+            ? number + 1
+            : random(number, queue.length);
+          newQueue.splice(index, 0, stage.id - 1);
+          setQueue(newQueue.toString().split(','));
+
+          blockNextQueue = true;
+        }
       }
     }
-
-    const input = textInput.current.ref.current;
-
-    input.value = '';
-    input.focus();
-    setValue(0);
-    blinkBalloon();
   };
 
   const handleNext = () => {
