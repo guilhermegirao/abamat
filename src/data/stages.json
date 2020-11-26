@@ -39,7 +39,7 @@
     "expression": null,
     "tutorial": true,
     "tutorial_tips": [
-      "Agora queremos descobrir quantos ovos tem na caixa que está fechada. Chamaremos a quantidade desconhecida de X.<br>Neste exemplo, o valor de X é igual a soma dos ovos da primeira caixa com os ovos da segunda caixa.",
+      "Para descobrir quantos ovos tem na caixa fechada, ou seja o valor de X, some a quantidade de ovos.",
       "ATENÇÃO PARA A EXPRESSÃO MATEMÁTICA DESTE EXEMPLO:<br><br>12+8= X e portanto, X=20"
     ]
   },
