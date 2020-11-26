@@ -118,3 +118,23 @@ a {
   display: inline-block;
   width: 100%;
 }
+
+.absolute-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 13px;
+}
+
+.absolute-container > button {
+  width: 120px !important;
+  height: 100px !important;
+}
+
+.absolute-container > button > img {
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.w-100 {
+  width: 100%;
+}

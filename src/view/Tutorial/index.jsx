@@ -1,51 +1,44 @@
 import React, { useState } from 'react';
-import Sparkles from '@chad.b.morrow/sparkles';
 import useStorageState from '../../hooks/useStorageState.js';
 
-import AvatarContainer from '../../components/AvatarContainer/index.jsx';
-import Avatar from '../../components/Avatar/index.jsx';
-import Balloon from '../../components/Balloon/index.jsx';
 import Button from '../../components/Button/index.jsx';
-import EggBox from '../../components/EggBox/index.jsx';
-import Input from '../../components/Input/index.jsx';
-import Text from '../../components/Text/index.jsx';
 
-import random from '../../helpers/random.js';
-import importAll from '../../helpers/import-images.js';
-
-import texts from '../../data/texts.json';
-import stages from '../../data/stages.json';
-
-const firstRandom = random(1, 6);
-const blockNextQueue = false;
-
-const imagesQuestions = importAll(
-  require.context('../../../public/images/questions', false, /\.(png)$/),
-);
+import Game from '../Game/index.jsx';
 
 const Tutorial = () => {
   const [, setView] = useStorageState('tutorial', 'view');
+  const [, setTutorialQueue] = useStorageState([0, 1], 'tutorial_queue');
 
-  const [tip, setTip] = useState(0);
+  const [skipTutorial, setSkipTutorial] = useStorageState(
+    true,
+    'skip_tutorial',
+  );
 
-  const [value, setValue] = useState(0);
+  const handleTutorial = () => {
+    setSkipTutorial(false);
+  };
 
-  const handleChange = e => {
-    setValue(Number(e.target.value));
+  const handleSkipTutorial = () => {
+    setView('game');
+    window.location.reload();
   };
 
   return (
     <div className="container">
-      <div className="row center">
-        <div className="col-sm-12">
-          <div className="animate__animated animate__fadeIn game-container">
-            <h1 className="indicator">TUTORIAL 1</h1>
-            <h3 className="question-container">
-              <Text parse>TEXTE</Text>
-            </h3>
+      {(skipTutorial && (
+        <div className="row center">
+          <div className="col-sm-12">
+            <div className="animate__animated animate__bounceInUp game-container">
+              <div className="w-100">
+                <Button onClick={() => handleTutorial()}>VER TUTORIAL?</Button>
+              </div>
+              <Button blue noSized onClick={() => handleSkipTutorial()}>
+                PULAR TUTORIAL?
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      )) || <Game tutorial />}
     </div>
   );
 };

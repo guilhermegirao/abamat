@@ -1,20 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Animate } from 'react-simple-animate';
 import Sparkles from '@chad.b.morrow/sparkles';
+import useSound from 'use-sound';
 import useStorageState from '../../hooks/useStorageState.js';
 
-import AvatarContainer from '../../components/AvatarContainer/index.jsx';
 import Avatar from '../../components/Avatar/index.jsx';
 import Balloon from '../../components/Balloon/index.jsx';
 import Button from '../../components/Button/index.jsx';
 import Text from '../../components/Text/index.jsx';
 
 import storageClear from '../../helpers/storage-clear';
+import importAll from '../../helpers/import-images.js';
 
 import texts from '../../data/texts.json';
 
+const sounds = importAll(
+  require.context('../../../public/sounds', false, /\.(mp3)$/),
+);
+
 const Finish = () => {
+  const [soundEnabled] = useStorageState(true, 'soundEnabled');
+
   const [showFinish, setShowFinish] = useState(false);
+
+  const [playEnd] = useSound(sounds['end.mp3'], {
+    volume: 0.5,
+    soundEnabled,
+  });
+
+  useEffect(() => {
+    playEnd();
+  }, [showFinish]);
 
   return (
     <div className="container">
@@ -46,12 +62,11 @@ const Finish = () => {
 };
 
 const FinishScreen = () => {
-  
   const handleClick = () => {
     storageClear();
     window.location.reload();
   };
-  
+
   return (
     <div className="container">
       <div className="row center">

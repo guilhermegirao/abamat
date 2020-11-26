@@ -13,7 +13,6 @@ const images = importAll(
 const EggBox = props => {
   const { amount, animated, min, max } = props;
   const [spriteState, setSpriteState] = useState(null);
-  const path = images;
 
   let w = 770;
   let h = 424;
@@ -34,6 +33,12 @@ const EggBox = props => {
       spriteState.goToAndPause(start);
     }
   }, [amount]);
+
+  useEffect(() => {
+    if (spriteState !== null) {
+      spriteState.play();
+    }
+  }, [animated]);
 
   return (
     <>
